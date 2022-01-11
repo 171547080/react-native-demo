@@ -1,12 +1,29 @@
 import React from 'react';
-import {View, Text, StyleSheet} from 'react-native';
+import {View, Text, StyleSheet, Button} from 'react-native';
+import {RootStackNavigation} from '../../router';
 import bg from '../../../assets/bg.jpg';
 
-class Home extends React.PureComponent {
+interface IProps {
+  navigation: RootStackNavigation;
+}
+
+class Home extends React.Component<IProps> {
+  onPress = () => {
+    const {navigation} = this.props;
+    navigation.navigate('User');
+  };
+  onPressDetail = () => {
+    const {navigation} = this.props;
+    navigation.navigate('UserDetail', {id: 1000});
+  };
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Hellow Home !!! </Text>
+        <Text>Hello Home !!! </Text>
+        <Button title="跳转到用户页面" onPress={this.onPress}></Button>
+        <Text>User 1000 </Text>
+        <Button title="跳转到个人信息" onPress={this.onPressDetail}></Button>
       </View>
     );
   }

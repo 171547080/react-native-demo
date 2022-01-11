@@ -9,19 +9,12 @@
  */
 
 import React from 'react';
-import { NavigationContainer } from '@react-navigation/native';
-import MyApp from './src/index';
 import Router from './src/router';
-import { createNativeStackNavigator } from '@react-navigation/native-stack';
-
-const Stack = createNativeStackNavigator();
 
 const App = () => {
 
   return (
-    <NavigationContainer>
       <Router></Router>
-    </NavigationContainer>
   );
 };
 
