@@ -1,13 +1,16 @@
-import React from 'react'
-import { Text, View } from 'react-native'
-class App extends React.Component{
+import React from 'react';
+import { Provider } from 'react-redux'
+import Router from './router';
+import store from './config/dva'
+import BootomTabs from './router/BottomTabs';
+
+class MyApp extends React.Component{
     render(){
-        return (
-            <View>
-                <Text>INDEX !!!</Text>
-            </View>
+        return(
+            <Provider store={store}>
+                <Router></Router>
+            </Provider>
         )
     }
 }
-
-export default App
+export default MyApp

@@ -9,12 +9,11 @@
  */
 
 import React from 'react';
-import Router from './src/router';
+import MyApp from './src/index'
 
 const App = () => {
-
   return (
-      <Router></Router>
+    <MyApp></MyApp>
   );
 };
 
